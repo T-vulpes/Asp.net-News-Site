@@ -1,0 +1,103 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style>
+        /* Scrollbar rengi */
+::-webkit-scrollbar {
+    width: 10px; /* scrollbar genişliği */
+}
+
+/* Scrollbar parçasının arkaplan rengi */
+::-webkit-scrollbar-track {
+    background: #f0f0f0; /* arkaplan rengi */
+}
+
+/* Scrollbar çubuğunun rengi */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, #e9c79e, #bf926b); /* kahverengi ve kremsi tonlarında gradient */
+    border-radius: 10px; /* scrollbar çubuğunun köşeleri */
+}
+
+/* Scrollbar çubuğuna hover yapıldığında rengi */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to right, #e9c79e, #bf926b); /* hover durumunda aynı gradient */
+}
+
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+   <link rel="shortcut icon" href="resimler/favicon.png">
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style=" /* background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea);*/">
+          
+    <form id="form1" runat="server">
+    
+<div id="container" style="background:none;">
+ 
+    <div id="menu">
+        <ul>
+            <li><a href="anasayfa.aspx">Gündem</a></li>
+            <li><a href="dunya.aspx">Dünya</a></li>
+            <li><a href="ekonomi.aspx">Ekonomi</a></li>
+            <li><a href="spor.aspx">Spor</a></li>
+            <li><a href="magazin.aspx">Magazin</a></li>
+        </ul>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fas fa-user" id="admin-icon"></i>
+            <img id="logo" src="resimler/logo.png" />
+
+    </div>
+           
+    </div>
+
+<asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+   
+   <div id="kapsayici">
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <!-- Popup içeriği buraya gelecek -->
+                <div id="yonetici">Yönetici İçeriği</div>
+            </div>
+        </div>
+        <div id="icerik"></div>
+    </div>
+
+</asp:ContentPlaceHolder>
+    <div class="footer">Deniz Haber İnternet Programcılığı 2024</div>        
+        
+    </form>
+
+    <script type="text/javascript">
+        // Menü öğesine tıklandığında popup penceresini aç
+        document.getElementById("admin-icon").addEventListener("click", function() {
+            document.getElementById("popup").style.display = "block";
+        });
+
+        // Kapatma işlevi için kapat düğmesine tıklayın
+        document.getElementsByClassName("close")[0].addEventListener("click", function() {
+            document.getElementById("popup").style.display = "none";
+        });
+
+        // Dışarıdaki alana tıklanırsa kapat
+        window.addEventListener("click", function(event) {
+            if (event.target == document.getElementById("popup")) {
+                document.getElementById("popup").style.display = "none";
+            }
+        });
+        setTimeout(function () {
+            var loader = document.getElementById("loader");
+            loader.style.display = "none"; // Yükleme tamamlandığında preloader'ı gizle
+        }, 1000);
+    </script>
+</body>
+</html>

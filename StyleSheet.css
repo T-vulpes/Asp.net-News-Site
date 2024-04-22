@@ -1,0 +1,453 @@
+﻿/* Genel stiller */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Logo */
+#logo {
+    width: 200px;
+    float:right;
+}
+
+/* Menü */
+
+#menu {
+    background-color: rgba(51, 51, 51, 0.5); /* Transparan arka plan */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease; /* Arka plan rengi geçiş efekti */
+}
+
+    #menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        #menu ul li {
+            float: left;
+        }
+
+            #menu ul li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 20px 20px;
+                text-decoration: none;
+                transition: background-color 0.4s ease;
+            }
+
+    #menu i {
+        color: white;
+        font-size: 18px;
+        margin-top: 19px;
+        margin-left: 10px;
+        vertical-align: middle;
+        transition: color 0.3s ease;
+    }
+
+        #menu i:hover {
+            color: #555;
+        }
+
+    #menu ul li a:hover {
+        background-color: #555;
+    }
+
+    /* Menü sabitleme */
+    #menu.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        animation: fadeInDown 0.5s;
+    }
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* İçerik */
+#kapsayici {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+/* Footer */
+.footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+/* İçerik */
+#icerik {
+    text-align: center; /* İçeriği merkezlemek için */
+    margin-top: 20px; /* Yukarıdan boşluk bırakmak için */
+}
+
+
+
+
+/* Popup Stilleri */
+.style1 {
+    width: 101%;
+}
+
+.style2 {
+    width: 166px;
+    text-align: right;
+    padding-right: 8%;
+}
+
+.style3 {
+    text-align: center;
+    padding-bottom: 15px;
+    background: linear-gradient(to right, whitesmoke, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 22px;
+}
+#ContentPlaceHolder1_Button1 {
+    width: 170px;
+    padding: 10px;
+    background-color:indianred; /* yeşil */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+    #ContentPlaceHolder1_Button1:hover {
+        background-color:darkred; /* koyu yeşil */
+    }
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius:17px;
+}
+
+.popup-content {
+    background: linear-gradient(black, darkred);
+    padding: 20px;
+    color: white;
+    border-radius: 17px;
+}
+
+.close {
+    color: #ff6666;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s ease; /*renk geçiş*/
+}
+
+    .close:hover,
+    .close:focus {
+        color: #ff3333; 
+        text-decoration: none;
+    }
+
+
+
+#hakkimizda {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    background-color: #f8f8f8; /* Arka plan rengi */
+}
+
+#hakkimizdaresim {
+    flex: 1;
+    padding-right: 20px;
+}
+
+    #hakkimizdaresim img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+#hakyazi {
+    flex: 2;
+}
+
+span{color:saddlebrown;}
+
+    #hakyazi p {
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333; /* Metin rengi */
+    }
+
+.fr-genel {
+    display: flex;
+    justify-content: space-between;
+    clear:both;
+}
+
+#frm_bslik {
+    text-align: center;
+    clear: both;
+}
+.form-container {
+    width: 40%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-left: 5%;
+}
+
+    .form-container h2 {
+        text-align: center;
+    }
+
+    .form-container input[type=text],
+    .form-container input[type=email],
+    .form-container textarea {
+        width: calc(100% - 24px); /* Düğmelerin genişliğini dahil etmek için */
+        padding: 12px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: none;
+    }
+
+.custom-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 95%;
+    transition: background-color 0.3s;
+}
+
+    .custom-button:hover {
+        background-color: #45a049;
+    }
+
+
+
+    .form-container label {
+        font-weight: bold;
+    }
+
+    .form-container .result {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+.map-container {
+    width: 45%;
+}
+
+
+/*ADMİN PANEL*/
+#adminmenu  {
+    margin-top:5%;
+}
+
+#adminmenu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+    #adminmenu ul li {
+        margin-bottom: 10px;
+    }
+
+        #adminmenu ul li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 8px;
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+
+            #adminmenu ul li a:hover {
+                background-color: #aaa;
+            }
+
+
+.custom-grid th {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+}
+
+.custom-grid tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.custom-grid tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.custom-grid tr:hover {
+    background-color: #cce5ff;
+}
+
+.custom-grid td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.custom-grid tr:last-child td {
+    border-bottom: 0;
+}
+
+.custom-grid {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    .custom-grid th,
+    .custom-grid td {
+        text-align: left;
+    }
+
+.custom-grid {
+    overflow-x: auto;
+}
+
+    .custom-grid .pager,
+    .custom-grid .pager td,
+    .custom-grid .pager td a {
+        color: #007bff;
+    }
+
+.doc-loader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color:rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .doc-loader img {
+        width: 120px;
+        height:auto;
+    }
+
+/*haberler*/
+.haber-item {
+    width: calc(33.33% - 20px); /* 3 sütunlu grid layout için */
+    margin-bottom: 20px;
+    text-align: center; /* İçeriği yatay olarak ortala */
+    box-sizing: border-box; /* Kenarlık dahil toplam genişliği belirler */
+    float: left; /* Öğeleri yan yana hizala */
+}
+
+    .haber-item h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .haber-item p {
+        margin-bottom: 10px;
+    }
+
+    .haber-item img {
+        width: 100%;
+        height: auto;
+    }
+
+.button {
+    background-color: #333; /* Koyu arka plan rengi */
+    color: #fff;
+    border: 1px solid #fff; /* Beyaz kenarlık */
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Geçiş efektleri */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Gölgelendirme efekti */
+}
+
+    .button:hover {
+        background-color: #555; /* Hover rengi */
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Hover gölgelendirme */
+    }
+
+.dropdownlist {
+    float: right;
+    margin-right: 20px; 
+    background-color: #f2f2f2;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    padding: 5px; 
+    color: #333;
+}
+
+    .dropdownlist:hover {
+        background-color: #e6e6e6;
+    }
+
+
+.weather-info {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+    .weather-info h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .weather-info p {
+        font-size: 16px;
+        color: #555;
+        margin: 0;
+    }

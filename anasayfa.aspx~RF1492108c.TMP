@@ -1,0 +1,149 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="~/anasayfa.aspx.cs" Inherits="anasayfa" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style type="text/css">
+        .style1
+        {
+            width: 101%;
+        }
+        .style2
+        {
+            width: 166px;
+        }
+        .style3
+        {
+            color: #2E65AE;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        // JavaScript kodu buraya gelecek
+    </script>
+</asp:Content>
+
+<asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
+    <div id="header">
+        <div class="header-content">
+        </div>
+    </div>
+    <div id="kapsayici">
+        <!-- Popup İçeriği -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <!-- Popup içeriği buraya gelecek -->
+                <table class="style1">
+                    <tr>
+                        <td class="style3" colspan="2">
+                            <strong>YÖNETİCİ GİRİŞİ</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="style2">
+                            Kullanıcı Adı :</td>
+                        <td>
+                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="style2">
+                            Şifre :</td>
+                        <td>
+                            <asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="style2">
+                            &nbsp;</td>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="style2">
+                            &nbsp;</td>
+                        <td>
+                            <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="GİRİŞ" 
+                                Width="170px" />
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <asp:Label ID="Label1" runat="server"></asp:Label>
+                <br />
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                    ConnectionString="Server=DESKTOP-OF8K7QI\\MSSQL;Database=habersitesi;Integrated Security=True;"
+                    SelectCommand="SELECT * FROM haberler"></asp:SqlDataSource>
+            </div>
+        </div>
+
+        <div id="hakkimizda">
+            <div id="hakkimizdaresim"><img src="resimler/hakkimizda.jpg" /></div>
+            <div id="hakyazi">
+                <h1>BİZ<span> KİMİZ?</span></h1>
+                <hr />
+                <p>
+                    Hoş geldiniz! Biz DenizHaber, tutkulu bir ekip tarafından yönetilen, güvenilir ve 
+                    tarafsız haberler sunan bir platformuz. Misyonumuz, 
+                    okuyucularımıza her gün en güncel ve doğru bilgileri sağlamak,
+                    topluma katkıda bulunmak ve demokratik bir toplumun önemini vurgulamaktır.</p>
+                    <p>Ekibimizdeki her bir editör ve yazar, farklı uzmanlık alanlarına sahiptir ve çeşitli
+                    perspektifler sunar. Amacımız, çeşitli konuları kapsayan, bilgilendirici ve ilgi çekici içerikler üretmektir. 
+                    Siz değerli okuyucularımızın güvenini  kazanmak ve onlara en iyi haber 
+                    deneyimini sunmak için sürekli çaba gösteriyoruz.</p>
+                    <p>Teşekkür ederiz ki DenizHaber'i tercih ettiniz. 
+                    Sizleri bilgilendirmek ve ilham vermek için buradayız.</p>
+                
+
+            </div>
+        </div>
+        <!-- İçerik -->
+        <div id="icerik">
+            <h1>SON DAKİKA HABERLERİ</h1>
+            <asp:GridView ID="GridView1" runat="server" CssClass="style1" AutoGenerateColumns="False" DataKeyNames="No" DataSourceID="SqlDataSource1">
+                <Columns>
+                    <asp:TemplateField HeaderText="Haber Başlık">
+                        <ItemTemplate>
+                            <asp:Label ID="lblHaberBaslik" runat="server" Text='<%# Eval("haber_baslik") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Haber İçerik">
+                        <ItemTemplate>
+                            <asp:Label ID="lblHaberIcerik" runat="server" Text='<%# Eval("haber_icerik") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Haber Resim">
+                        <ItemTemplate>
+                            <asp:Image ID="imgHaberResim" runat="server" ImageUrl='<%# Eval("haber_resmi") %>' Height="200px" Width="200px" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Haber Link">
+                        <ItemTemplate>
+                            <asp:HyperLink ID="hlHaberLink" runat="server" NavigateUrl='<%# Eval("haber_linki") %>' Text="Detaylı İçerik" Target="_blank"></asp:HyperLink>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+        </div>
+    </div>
+
+    <br />
+    <h1 id="frm_bslik">MESAJ <span>GÖNDER</span></h1>
+    <hr />
+    <div class="fr-genel">
+        <div class="form-container">
+            <h2>Mesaj Formu</h2>
+            <asp:TextBox ID="txtIsim" runat="server" placeholder="İsim"></asp:TextBox><br />
+            <asp:TextBox ID="txtTelefonNo" runat="server" placeholder="Telefon Numarası"></asp:TextBox>
+            <asp:RegularExpressionValidator ID="regexTelefon" runat="server" ControlToValidate="txtTelefonNo" ErrorMessage="Geçerli bir telefon numarası giriniz." ValidationExpression="^(05(\d{9}))$"></asp:RegularExpressionValidator>
+            <asp:TextBox ID="txtMail" runat="server" placeholder="E-Posta"></asp:TextBox>
+            <asp:RegularExpressionValidator ID="regexEmail" runat="server" ControlToValidate="txtMail" ErrorMessage="Geçerli bir e-posta adresi giriniz." ValidationExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"></asp:RegularExpressionValidator>
+            <asp:TextBox ID="txtKonu" runat="server" TextMode="MultiLine" placeholder="Mesaj"></asp:TextBox><br />
+            <asp:Button ID="btnGonder" runat="server" Text="Gönder" OnClick="btnGonder_Click" CssClass="custom-button" /><br />
+            <asp:Label ID="lblSonuc" runat="server" CssClass="result"></asp:Label>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6944955565934!2d-74.00597368459804!3d40.71277508232677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2suk!4v1644909279368!5m2!1sen!2suk" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+    <br /><br />
+</asp:Content>
