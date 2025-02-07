@@ -19,11 +19,9 @@
     border-radius: 10px; 
 }
 
-/* Scrollbar çubuğuna hover yapıldığında rengi */
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to right, #e9c79e, #bf926b); /* hover durumunda aynı gradient */
+    background: linear-gradient(to right, #e9c79e, #bf926b); 
 }
-
 
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
@@ -53,16 +51,12 @@
             <img id="logo" src="resimler/logo.png" />
 
     </div>
-           
     </div>
-
 <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-   
    <div id="kapsayici">
         <div id="popup" class="popup">
             <div class="popup-content">
                 <span class="close">&times;</span>
-                <!-- Popup içeriği buraya gelecek -->
                 <div id="yonetici">Yönetici İçeriği</div>
             </div>
         </div>
