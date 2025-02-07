@@ -89,7 +89,6 @@
 
     <script type="text/javascript">
         function ShowPopup() {
-            // JavaScript ile bir alert kutusu göster
             var message = 'Lütfen resmi yükleyiniz!';
             var alertBox = '<div class="alert">' + message + '</div>';
             document.getElementById('icerik').insertAdjacentHTML('afterbegin', alertBox);
