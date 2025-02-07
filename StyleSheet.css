@@ -374,13 +374,12 @@ span{color:saddlebrown;}
         height:auto;
     }
 
-/*haberler*/
 .haber-item {
-    width: calc(33.33% - 20px); /* 3 sütunlu grid layout için */
+    width: calc(33.33% - 20px); 
     margin-bottom: 20px;
-    text-align: center; /* İçeriği yatay olarak ortala */
-    box-sizing: border-box; /* Kenarlık dahil toplam genişliği belirler */
-    float: left; /* Öğeleri yan yana hizala */
+    text-align: center; 
+    box-sizing: border-box; 
+    float: left;
 }
 
     .haber-item h2 {
@@ -398,19 +397,19 @@ span{color:saddlebrown;}
     }
 
 .button {
-    background-color: #333; /* Koyu arka plan rengi */
+    background-color: #333; 
     color: #fff;
-    border: 1px solid #fff; /* Beyaz kenarlık */
+    border: 1px solid #fff; 
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Geçiş efektleri */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Gölgelendirme efekti */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
     .button:hover {
-        background-color: #555; /* Hover rengi */
-        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Hover gölgelendirme */
+        background-color: #555;
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); 
     }
 
 .dropdownlist {
