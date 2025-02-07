@@ -78,33 +78,22 @@ public partial class sil : System.Web.UI.Page
         }
     }
 
-
-
     private void Sil(string id)
     {
-        // Bağlantıyı aç
         VeriTabaniniBagla();
-
-        // Silme sorgusunu tanımla ve bağlantıya bağlı bir SqlCommand nesnesi oluştur
         string deleteQuery = "DELETE FROM haberler WHERE NO = @ID";
         SqlCommand deleteCommand = new SqlCommand(deleteQuery, baglanti);
         deleteCommand.Parameters.AddWithValue("@ID", id);
 
-        // Komutu çalıştır ve etkilenen satır sayısını geri döndür
         int affectedRows = deleteCommand.ExecuteNonQuery();
-
-        // Bağlantıyı kapat
         baglanti.Close();
 
-        // Eğer etkilenen satır sayısı 0 ise, silme işlemi başarısız olmuş demektir
         if (affectedRows == 0)
         {
-            // İşlem başarısız uyarısı ver veya işlemle ilgili başka bir işlem yap
         ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Silme işlemi başarısız oldu.');", true);
         }
         else
         {
-            // Silme işlemi başarılı olduğunda tekrar verileri getir
             VerileriGetir();
         }
     }
