@@ -16,7 +16,7 @@
             }
         else
         {
-            Label2.Text = "Þifre bulunamadý!";
+            Label2.Text = "sifre bulunamadi!";
         }
     }
 </script>
@@ -31,12 +31,12 @@
                     <li><a href="sil.aspx">Haber Silme</a></li>
                     <li><a href="haberekle.aspx">Haber Ekleme</a></li>
                     <li><a href="guncelle.aspx">Haber Güncelleme</a></li>
-                    <li><a href="kullanicimesaj.aspx">Kullanýcý Mesajlarý</a></li>
+                    <li><a href="kullanicimesaj.aspx">Kullanici Mesajlari</a></li>
                 </ul>
             </div>
             <div id="icerik">
                 <p id="hosgeldiniz">admin paneline hosgeldiniz!<br />
-                    <strong>Kullanýcý Adý :</strong><asp:Label ID="Label1" runat="server"></asp:Label>
+                    <strong>Kullanici Adi :</strong><asp:Label ID="Label1" runat="server"></asp:Label>
                 </p>
                 <p><strong>sifre:</strong>
                     <asp:Label ID="Label2" runat="server"></asp:Label>
