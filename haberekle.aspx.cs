@@ -48,14 +48,11 @@ public partial class haberekle : System.Web.UI.Page
                 }
                 else
                 {
-                    // Dosya yüklenmemişse, uyarı göster
                     ClientScript.RegisterStartupScript(this.GetType(), "alert", "ShowPopup();", true);
                 }
             }
         }
     }
-
-
     protected void ClearContentButton_Click(object sender, EventArgs e)
     {
         TextBox1.Text = "";
