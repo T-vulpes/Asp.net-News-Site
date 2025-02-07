@@ -6,20 +6,17 @@
 <head runat="server">
     <title></title>
     <style>
-        /* Scrollbar rengi */
 ::-webkit-scrollbar {
-    width: 10px; /* scrollbar genişliği */
+    width: 10px; 
 }
 
-/* Scrollbar parçasının arkaplan rengi */
 ::-webkit-scrollbar-track {
-    background: #f0f0f0; /* arkaplan rengi */
+    background: #f0f0f0; 
 }
 
-/* Scrollbar çubuğunun rengi */
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to right, #e9c79e, #bf926b); /* kahverengi ve kremsi tonlarında gradient */
-    border-radius: 10px; /* scrollbar çubuğunun köşeleri */
+    background: linear-gradient(to right, #e9c79e, #bf926b); 
+    border-radius: 10px; 
 }
 
 /* Scrollbar çubuğuna hover yapıldığında rengi */
