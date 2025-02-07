@@ -18,7 +18,6 @@ public partial class guncelle : System.Web.UI.Page
 
     protected void VerileriGetir()
     {
-        // Veritabanından verileri çekme
         string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
@@ -33,7 +32,6 @@ public partial class guncelle : System.Web.UI.Page
 
     protected void HaberlerGridView_SelectedIndexChanged(object sender, EventArgs e)
     {
-        // Seçilen haberin bilgilerini güncelleme formuna doldur
         GridViewRow row = HaberlerGridView.SelectedRow;
         HaberNOTextBox.Text = row.Cells[1].Text; // NO
         HaberBaslikTextBox.Text = row.Cells[2].Text; // Başlık
@@ -52,7 +50,6 @@ public partial class guncelle : System.Web.UI.Page
             string kategori = KategoriTextBox.Text;
             string haberLinki = HaberLinkiTextBox.Text;
 
-            // Veritabanında güncelleme işlemi
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -70,29 +67,24 @@ public partial class guncelle : System.Web.UI.Page
                     int rowsAffected = command.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {
-                        // Güncelleme başarılı mesajı veya başka bir işlem
                         Response.Write("Haber başarıyla güncellendi.");
-                        VerileriGetir(); // Tabloyu güncelle
+                        VerileriGetir(); 
                     }
                     else
                     {
-                        // Güncelleme başarısız mesajı veya başka bir işlem
                         Response.Write("Haber güncelleme işlemi başarısız oldu.");
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Hata durumunda mesajı görüntüle
                     Response.Write("Hata oluştu: " + ex.Message);
                 }
             }
         }
         else
         {
-            // Kullanıcının girdiği değer geçerli bir tamsayı değilse hata mesajı gösterin
             Response.Write("Geçerli bir haber numarası girin.");
         }
     }
-
 
 }
