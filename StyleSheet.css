@@ -1,4 +1,3 @@
-﻿/* Genel stiller */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -13,13 +12,10 @@ body {
     padding: 0 20px;
 }
 
-/* Logo */
 #logo {
     width: 200px;
     float:right;
 }
-
-/* Menü */
 
 #menu {
     background-color: rgba(51, 51, 51, 0.5); /* Transparan arka plan */
@@ -66,7 +62,6 @@ body {
         background-color: #555;
     }
 
-    /* Menü sabitleme */
     #menu.fixed {
         position: fixed;
         top: 0;
