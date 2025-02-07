@@ -162,7 +162,7 @@ body {
     float: right;
     font-size: 28px;
     font-weight: bold;
-    transition: color 0.3s ease; /*renk geçiş*/
+    transition: color 0.3s ease; 
 }
 
     .close:hover,
@@ -177,7 +177,7 @@ body {
     display: flex;
     align-items: center;
     padding: 50px;
-    background-color: #f8f8f8; /* Arka plan rengi */
+    background-color: #f8f8f8; 
 }
 
 #hakkimizdaresim {
@@ -201,7 +201,7 @@ span{color:saddlebrown;}
         margin-bottom: 20px;
         font-size: 16px;
         line-height: 1.6;
-        color: #333; /* Metin rengi */
+        color: #333; 
     }
 
 .fr-genel {
@@ -230,7 +230,7 @@ span{color:saddlebrown;}
     .form-container input[type=text],
     .form-container input[type=email],
     .form-container textarea {
-        width: calc(100% - 24px); /* Düğmelerin genişliğini dahil etmek için */
+        width: calc(100% - 24px); 
         padding: 12px;
         margin: 8px 0;
         box-sizing: border-box;
@@ -255,8 +255,6 @@ span{color:saddlebrown;}
         background-color: #45a049;
     }
 
-
-
     .form-container label {
         font-weight: bold;
     }
@@ -270,8 +268,6 @@ span{color:saddlebrown;}
     width: 45%;
 }
 
-
-/*ADMİN PANEL*/
 #adminmenu  {
     margin-top:5%;
 }
@@ -297,7 +293,6 @@ span{color:saddlebrown;}
             #adminmenu ul li a:hover {
                 background-color: #aaa;
             }
-
 
 .custom-grid th {
     background-color: #007bff;
@@ -339,7 +334,6 @@ span{color:saddlebrown;}
 .custom-grid {
     overflow-x: auto;
 }
-
     .custom-grid .pager,
     .custom-grid .pager td,
     .custom-grid .pager td a {
@@ -358,7 +352,6 @@ span{color:saddlebrown;}
     justify-content: center;
     align-items: center;
 }
-
     .doc-loader img {
         width: 120px;
         height:auto;
@@ -371,12 +364,10 @@ span{color:saddlebrown;}
     box-sizing: border-box; 
     float: left;
 }
-
     .haber-item h2 {
         font-size: 18px;
         margin-bottom: 10px;
     }
-
     .haber-item p {
         margin-bottom: 10px;
     }
