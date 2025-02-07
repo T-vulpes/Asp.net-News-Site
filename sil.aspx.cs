@@ -41,7 +41,6 @@ public partial class sil : System.Web.UI.Page
         }
         catch (Exception ex)
         {
-            // Hata durumunda burada işlem yapılabilir
         }
         finally
         {
@@ -56,40 +55,25 @@ public partial class sil : System.Web.UI.Page
         baglanti.Open();
     }
 
-
-
     protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
     {
-        // Seçilen satırın indeksini al
         int selectedIndex = GridView1.SelectedIndex;
-
-        // Seçilen satırın ID'sini al
         string secilenID = GridView1.DataKeys[selectedIndex]["NO"].ToString();
 
         TextBox1.Text = secilenID;
-
-        // Silme işlemi için kullanıcıya onay mesajı göster
         ClientScript.RegisterStartupScript(this.GetType(), "confirm", "confirm('Bu kaydı silmek istediğinizden emin misiniz?')", true);
     }
 
     protected void btnSil_Click(object sender, EventArgs e)
     {
-        // GridView1'de seçili bir satır var mı kontrol edelim
         if (GridView1.SelectedRow != null)
         {
-            // Seçili satırın indeksini al
             int selectedIndex = GridView1.SelectedIndex;
-
-            // Seçilen satırın ID'sini alalım
             string secilenID = GridView1.DataKeys[selectedIndex]["NO"].ToString();
-
-            // Silme işlemini gerçekleştirelim
             Sil(secilenID);
         }
         else
         {
-            // Eğer seçili bir satır yoksa, kullanıcıya bir hata mesajı gösterin veya işlemi iptal edin.
-            // Örneğin:
             ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Lütfen bir satır seçin.');", true);
         }
     }
