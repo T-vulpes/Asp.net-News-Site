@@ -8,7 +8,6 @@
         {
             string userName = Session["UserName"].ToString();
             Label1.Text = userName;
-            // Kullanýcý adý mevcut, istediðiniz iþlemleri gerçekleþtirin
         }
         if (Session["sifre"] != null)
             {
@@ -17,13 +16,10 @@
             }
         else
         {
-            Label2.Text = "Þifre bulunamadý!";
-            // Kullanýcý giriþ yapmamýþ, isteðe baðlý olarak farklý bir iþlem yapabilirsiniz
+            Label2.Text = "Ãžifre bulunamadÃ½!";
         }
     }
 </script>
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
 </asp:Content>
@@ -34,15 +30,15 @@
                 <ul>
                     <li><a href="sil.aspx">Haber Silme</a></li>
                     <li><a href="haberekle.aspx">Haber Ekleme</a></li>
-                    <li><a href="guncelle.aspx">Haber Güncelleme</a></li>
-                    <li><a href="kullanicimesaj.aspx">Kullanýcý Mesajlarý</a></li>
+                    <li><a href="guncelle.aspx">Haber GÃ¼ncelleme</a></li>
+                    <li><a href="kullanicimesaj.aspx">KullanÃ½cÃ½ MesajlarÃ½</a></li>
                 </ul>
             </div>
             <div id="icerik">
-                <p id="hoþgeldiniz">ADMÝN PANELÝNE HOÞ GELDÝNÝZ!<br />
-                    <strong>Kullanýcý Adý :</strong><asp:Label ID="Label1" runat="server"></asp:Label>
+                <p id="hosgeldiniz">admin paneline hosgeldiniz!<br />
+                    <strong>KullanÃ½cÃ½ AdÃ½ :</strong><asp:Label ID="Label1" runat="server"></asp:Label>
                 </p>
-                <p><strong>Þifre:</strong>
+                <p><strong>sifre:</strong>
                     <asp:Label ID="Label2" runat="server"></asp:Label>
                     <br />
                 </p>
