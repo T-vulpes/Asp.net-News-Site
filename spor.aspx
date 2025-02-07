@@ -3,17 +3,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
     <script>
-        // Menü simgesine tıklandığında popup penceresini aç
         document.getElementById("admin-icon").addEventListener("click", function() {
             document.getElementById("popup").style.display = "block";
         });
 
-        // Kapatma işlevi için kapat düğmesine tıklayın
         document.getElementsByClassName("close")[0].addEventListener("click", function() {
             document.getElementById("popup").style.display = "none";
         });
 
-        // Dışarıdaki alana tıklanırsa kapat
         window.addEventListener("click", function(event) {
             if (event.target == document.getElementById("popup")) {
                 document.getElementById("popup").style.display = "none";
@@ -27,11 +24,9 @@
                 <img src="resimler/preloader.gif" alt="Seppo">
             </div> 
     <div id="kapsayici">
-        <!-- Popup İçeriği -->
         <div id="popup" class="popup">
             <div class="popup-content">
                 <span class="close">&times;</span>
-                <!-- Popup içeriği buraya gelecek -->
                 <table class="style1">
                     <tr>
                         <td class="style3" colspan="2">
@@ -74,7 +69,6 @@
                     SelectCommand="SELECT * FROM [haberler] WHERE kategori='Spor'"></asp:AccessDataSource>
             </div>
         </div>
-        <!-- İçerik -->
         <div id="icerik">
 
     <h1>SPOR'DAN HABERLER</h1>
@@ -90,10 +84,7 @@
     </ItemTemplate>
 </asp:Repeater>
 
-
         </div>
-
-
     </div>
 
     <br />
@@ -117,6 +108,4 @@
     </div>
 </div>
     <br /><br />
-
-
 </asp:Content>
