@@ -18,12 +18,12 @@ body {
 }
 
 #menu {
-    background-color: rgba(51, 51, 51, 0.5); /* Transparan arka plan */
+    background-color: rgba(51, 51, 51, 0.5);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    transition: background-color 0.3s ease; /* Arka plan rengi geçiş efekti */
+    transition: background-color 0.3s ease; 
 }
 
     #menu ul {
