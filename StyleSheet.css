@@ -82,14 +82,10 @@ body {
     }
 }
 
-
-/* İçerik */
 #kapsayici {
     margin-top: 20px;
     padding: 20px;
 }
-
-/* Footer */
 .footer {
     position: relative;
     bottom: 0;
@@ -101,17 +97,11 @@ body {
     padding: 20px 0;
 }
 
-
-/* İçerik */
 #icerik {
-    text-align: center; /* İçeriği merkezlemek için */
-    margin-top: 20px; /* Yukarıdan boşluk bırakmak için */
+    text-align: center; 
+    margin-top: 20px; 
 }
 
-
-
-
-/* Popup Stilleri */
 .style1 {
     width: 101%;
 }
@@ -133,7 +123,7 @@ body {
 #ContentPlaceHolder1_Button1 {
     width: 170px;
     padding: 10px;
-    background-color:indianred; /* yeşil */
+    background-color:indianred; 
     color: white;
     border: none;
     border-radius: 5px;
@@ -142,10 +132,10 @@ body {
     text-transform: uppercase;
     transition: background-color 0.3s ease;
 }
-
     #ContentPlaceHolder1_Button1:hover {
-        background-color:darkred; /* koyu yeşil */
+        background-color:darkred; 
     }
+
 .popup {
     display: none;
     position: fixed;
