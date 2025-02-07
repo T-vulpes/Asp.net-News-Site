@@ -32,12 +32,10 @@ public partial class ekonomi : System.Web.UI.Page
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        // SQL Server veritabanı bağlantısı
         string connectionString = "Server=DESKTOP-OF8K7QI\\MSSQL;Database=habersitesi;Trusted_Connection=True;";
         SqlConnection baglanti = new SqlConnection(connectionString);
         baglanti.Open();
 
-        // Kullanıcı giriş sorgusu
         string sqlSorgu = "SELECT * FROM uyelik WHERE kullaniciadi=@kullaniciadi AND sifre=@sifre";
         SqlCommand komut = new SqlCommand(sqlSorgu, baglanti);
         komut.Parameters.AddWithValue("@kullaniciadi", TextBox1.Text);
@@ -46,14 +44,11 @@ public partial class ekonomi : System.Web.UI.Page
         SqlDataReader okuyucu = komut.ExecuteReader();
         if (okuyucu.HasRows)
         {
-            // Kullanıcı girişi başarılı olduğunda kullanıcının adını oturum değişkenine kaydet
             Session["UserName"] = TextBox1.Text;
-
             Response.Redirect("adminpanel.aspx");
         }
         else
         {
-            // Kullanıcı girişi başarısız olduğunda hata mesajını göster
             ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Kullanıcı adı veya şifre hatalı!');", true);
         }
 
@@ -66,20 +61,15 @@ public partial class ekonomi : System.Web.UI.Page
 
     }
 
-
     protected void btnGonder_Click(object sender, EventArgs e)
     {
-        // SQL Server veritabanı bağlantısı
         string connectionString = "Server=DESKTOP-OF8K7QI\\MSSQL;Database=habersitesi;Trusted_Connection=True;";
 
-        // Veritabanı bağlantısını aç
         using (SqlConnection baglanti = new SqlConnection(connectionString))
         {
-            // Veritabanı komutunu hazırla
             string sqlKomut = "INSERT INTO mesajlar (isim, telefonno, mail, haber) VALUES (@isim, @telefonno, @mail, @haber)";
             using (SqlCommand komut = new SqlCommand(sqlKomut, baglanti))
             {
-                // Parametreleri ekleyerek SQL komutunu güvenli hale getir
                 komut.Parameters.AddWithValue("@isim", txtIsim.Text);
                 komut.Parameters.AddWithValue("@telefonno", txtTelefonNo.Text);
                 komut.Parameters.AddWithValue("@mail", txtMail.Text);
@@ -87,21 +77,15 @@ public partial class ekonomi : System.Web.UI.Page
 
                 try
                 {
-                    // Veritabanı bağlantısını aç
                     baglanti.Open();
-
-                    // Komutu çalıştır
                     komut.ExecuteNonQuery();
 
-                    // Başarı mesajı göster
                     lblSonuc.Text = "Mesaj başarıyla gönderildi!";
                     ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Mesaj başarıyla gönderildi!');", true);
 
                 }
                 catch (Exception ex)
                 {
-                    // Hata durumunda hata mesajını göster
-
                     lblSonuc.Text = "Hata oluştu: " + ex.Message;
                 }
             }
