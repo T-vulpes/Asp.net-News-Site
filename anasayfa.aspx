@@ -1,27 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="~/anasayfa.aspx.cs" Inherits="anasayfa" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-
-
     <script>
-        // Menü simgesine tıklandığında popup penceresini aç
         document.getElementById("admin-icon").addEventListener("click", function() {
             document.getElementById("popup").style.display = "block";
         });
-
-        // Kapatma işlevi için kapat düğmesine tıklayın
         document.getElementsByClassName("close")[0].addEventListener("click", function() {
             document.getElementById("popup").style.display = "none";
         });
-
-        // Dışarıdaki alana tıklanırsa kapat
         window.addEventListener("click", function(event) {
             if (event.target == document.getElementById("popup")) {
                 document.getElementById("popup").style.display = "none";
             }
         });
     </script>
-
 </asp:Content>
 
 <asp:Content ID="Content2" runat="server" 
@@ -35,11 +27,9 @@
             </div> 
     
     <div id="kapsayici">
-        <!-- Popup İçeriği -->
         <div id="popup" class="popup">
             <div class="popup-content">
                 <span class="close">&times;</span>
-                <!-- Popup içeriği buraya gelecek -->
                 <table class="style1">
                     <tr>
                         <td class="style3" colspan="2">
@@ -80,9 +70,7 @@
             </div>
         </div>
         <div class="sayfayagiris">
-
             <asp:Label ID="lblZiyaretSayisi" runat="server"></asp:Label>
-
         </div>
         <div id="hakkimizda">
             <div id="hakkimizdaresim"><img src="resimler/hakkimizda.jpg" /></div>
@@ -104,7 +92,6 @@
 
             </div>
         </div>
-        <!-- İçerik -->
         <div id="icerik">
             <asp:DropDownList ID="filtre" runat="server" AutoPostBack="True" OnSelectedIndexChanged="Filtre_SelectedIndexChanged" CssClass="dropdownlist">
                 <asp:ListItem>Sırala..</asp:ListItem>
@@ -134,9 +121,7 @@
     tekrarlanan öğe için bu alanın değerini alır ve belirtilen HTML etiketi içine yerleştirir.--%>
     </ItemTemplate>
 </asp:Repeater>
-
         </div>
-
     </div>
     <br /><br /><br />
         <h1 id="frm_bslik">MESAJ <span>GÖNDER</span></h1>
@@ -159,6 +144,4 @@
     </div>
 </div>
     <br /><br />
-
-
 </asp:Content>
