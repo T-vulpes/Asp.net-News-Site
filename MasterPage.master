@@ -75,17 +75,14 @@
     </form>
 
     <script type="text/javascript">
-        // Menü öğesine tıklandığında popup penceresini aç
         document.getElementById("admin-icon").addEventListener("click", function() {
             document.getElementById("popup").style.display = "block";
         });
 
-        // Kapatma işlevi için kapat düğmesine tıklayın
         document.getElementsByClassName("close")[0].addEventListener("click", function() {
             document.getElementById("popup").style.display = "none";
         });
 
-        // Dışarıdaki alana tıklanırsa kapat
         window.addEventListener("click", function(event) {
             if (event.target == document.getElementById("popup")) {
                 document.getElementById("popup").style.display = "none";
@@ -93,7 +90,7 @@
         });
         setTimeout(function () {
             var loader = document.getElementById("loader");
-            loader.style.display = "none"; // Yükleme tamamlandığında preloader'ı gizle
+            loader.style.display = "none"; 
         }, 1000);
     </script>
 </body>
