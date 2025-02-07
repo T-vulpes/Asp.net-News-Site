@@ -80,7 +80,7 @@ public partial class anasayfa : System.Web.UI.Page
 
         string sqlSorgu = "SELECT * FROM uyelik WHERE kullaniciadi=@kullaniciadi AND sifre=@sifre";
         SqlCommand komut = new SqlCommand(sqlSorgu, baglanti);
-        komut.Parameters.AddWithValue("@kullaniciadi", TextBox1.Text); //u satır, SqlCommand nesnesine parametreler ekler. AddWithValue yöntemi, komut nesnesine bir parametre ekler ve parametrenin adı ve değeri verilir. @kullaniciadi parametresine, TextBox1.Text özelliğinden (yani bir kullanıcı giriş kutusundan) alınan değer atanır. Bu yöntem, SQL sorgusunu daha güvenli hale getirmek için kullanılır, çünkü kullanıcı girdileri parametreler aracılığıyla sorguya bağlanır ve bu şekilde SQL enjeksiyon saldırıları önlenir.
+        komut.Parameters.AddWithValue("@kullaniciadi", TextBox1.Text); 
         komut.Parameters.AddWithValue("@sifre", TextBox2.Text);
 
         SqlDataReader okuyucu = komut.ExecuteReader();
